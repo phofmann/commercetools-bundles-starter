@@ -3,7 +3,7 @@ import { entryPointUriPathToPermissionKeys } from '@commercetools-frontend/appli
 const ROOT_PATH = 'bundles-static';
 const BUNDLE_PRODUCT_TYPE = 'static-bundle-parent';
 const MASTER_VARIANT_ID = 1;
-const entryPointUriPath = 'bundles-static';
+const entryPointUriPath = 'static-bundles';
 
 const PERMISSIONS = entryPointUriPathToPermissionKeys(entryPointUriPath);
 
