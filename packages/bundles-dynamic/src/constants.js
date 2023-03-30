@@ -1,6 +1,5 @@
 import { entryPointUriPathToPermissionKeys } from '@commercetools-frontend/application-shell/ssr';
 
-const ROOT_PATH = 'bundles-dynamic';
 const BUNDLE_PRODUCT_TYPE = 'dynamic-bundle-parent';
 const BUNDLE_CART_CUSTOM_TYPE = 'dynamic-bundle-parent-child-link';
 const MASTER_VARIANT_ID = 1;
@@ -11,7 +10,13 @@ const ATTRIBUTES = {
   MIN_QUANTITY: 'min-quantity',
   MAX_QUANTITY: 'max-quantity',
 };
-const entryPointUriPath = 'dynamic-bundles';
+
+const entryPointUriPath =
+  typeof window === 'undefined'
+    ? process.env.ENTRY_POINT_URI_PATH
+    : window.app.entryPointUriPath;
+
+const ROOT_PATH = entryPointUriPath;    
 
 const PERMISSIONS = entryPointUriPathToPermissionKeys(entryPointUriPath);
 
